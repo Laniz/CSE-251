@@ -1,0 +1,3 @@
+If this file exists in the project directory, part 1 will be drawn
+
+Rename/Remove this file if you you don't need to see part1 drawn all the time. 
