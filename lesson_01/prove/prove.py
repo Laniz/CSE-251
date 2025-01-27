@@ -2,7 +2,7 @@
 Course: CSE 251 
 Lesson: L01 Prove
 File:   prove.py
-Author: <Add name here>
+Author: Shepherd Ncube
 
 Purpose: Drawing with Python Turtle
 
@@ -227,6 +227,8 @@ def run_with_threads(tur, log, main_turtle):
     tur.play_commands(main_turtle)
     log.stop_timer('Total drawing time')
     tur.clear()
+
+    
 
 
 def main():

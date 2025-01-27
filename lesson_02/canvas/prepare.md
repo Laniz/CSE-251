@@ -16,6 +16,16 @@ Section | Content
 
 ### Overview
 
+x = ['123', 'abc', '345']
+
+Print(str(x) [1:-1])
+
+version 2
+
+print(', '. join(x))
+
+print(*x, sep=', ')
+
 Last lesson we learned to create threads that are considered *stand alone* or independent. This means that when a thread is running, it doesn't effect other threads and there was no communication between threads. In this lesson we are going to learn about the communication tools that allow threads to work together.
 
 ### States of a Thread
