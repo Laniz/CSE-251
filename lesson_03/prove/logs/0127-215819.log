@@ -1,0 +1,13 @@
+21:58:25| Time for 30 frames using 1 process(es): 6.145425 seconds
+21:58:29| Time for 30 frames using 2 process(es): 4.326399 seconds
+21:58:34| Time for 30 frames using 3 process(es): 4.143259 seconds
+21:58:38| Time for 30 frames using 4 process(es): 4.515692 seconds
+21:58:43| Time for 30 frames using 5 process(es): 4.751281 seconds
+21:58:47| Time for 30 frames using 6 process(es): 4.247362 seconds
+21:58:51| Time for 30 frames using 7 process(es): 4.106370 seconds
+21:58:55| Time for 30 frames using 8 process(es): 3.746485 seconds
+21:58:59| Time for 30 frames using 9 process(es): 4.161843 seconds
+21:59:04| Time for 30 frames using 10 process(es): 4.450301 seconds
+21:59:09| Time for 30 frames using 11 process(es): 4.954707 seconds
+21:59:14| Time for 30 frames using 12 process(es): 5.067589 seconds
+21:59:14| Total Time for ALL processing: 54.63133090012707
