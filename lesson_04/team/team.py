@@ -31,8 +31,11 @@ def retrieve_thread():  # TODO add arguments
 
     while True:
         # TODO check to see if anything is in the queue
+        if data_queue.empty():
+            break
 
         # TODO process the value retrieved from the queue
+
 
         # TODO make Internet call to get characters name and log it
         pass
@@ -43,6 +46,7 @@ def file_reader(): # TODO add arguments
     """ This thread reading the data file and places the values in the data_queue """
 
     # TODO Open the data file "urls.txt" and place items into a queue
+    data_queue = queue.Queue()
 
     log.write('finished reading file')
 

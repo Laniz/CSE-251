@@ -2,7 +2,7 @@
 Course: CSE 251 
 Lesson: L04 Prove
 File:   prove.py
-Author: <Add name here>
+Author: Shepherd Ncube
 
 Purpose: Assignment 04 - Factory and Dealership
 
