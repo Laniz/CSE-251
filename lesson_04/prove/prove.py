@@ -1,26 +1,13 @@
-"""
-Course: CSE 251 
-Lesson: L04 Prove
-File:   prove.py
-Author: Shepherd Ncube
-
-Purpose: Assignment 04 - Factory and Dealership
-
-Instructions:
-
-- Complete the assignments TODO sections and DO NOT edit parts you were told to leave alone.
-- Review the full instructions in Canvas; there are a lot of DO NOTS in this lesson.
-"""
-
 import time
 import threading
 import random
+from datetime import datetime
 
 # Include cse 251 common Python files
 from cse251 import *
 
 # Global Constants - DO NOT CHANGE
-CARS_TO_PRODUCE = 500
+cars_to_be_made = 500
 MAX_QUEUE_SIZE = 10
 SLEEP_REDUCE_FACTOR = 50
 
@@ -77,74 +64,74 @@ class Queue251():
 class Factory(threading.Thread):
     """ This is a factory.  It will create cars and place them on the car queue """
 
-    def __init__(self):
-        # TODO, you need to add arguments that will pass all of data that 1 factory needs
-        # to create cars and to place them in a queue.
-        pass
-
+    def __init__(self, queue, banana1, sem_full):
+        threading.Thread.__init__(self)
+        self.queue = queue
+        self.banana1 = banana1
+        # banana1 is a semaphore it counts the number of available slots in the queue
+        self.sem_full = sem_full
 
     def run(self):
-        for i in range(CARS_TO_PRODUCE):
-            # TODO Add you code here
-            """
-            create a car
-            place the car on the queue
-            signal the dealer that there is a car on the queue
-           """
-
-        # signal the dealer that there there are not more cars
-        pass
-
+        for _ in range(cars_to_be_made):
+            self.banana1.acquire()  
+            car = Car()
+            self.queue.put(car)
+            self.sem_full.release()  
+        
 
 class Dealer(threading.Thread):
     """ This is a dealer that receives cars """
 
-    def __init__(self):
-        # TODO, you need to add arguments that pass all of data that 1 Dealer needs
-        # to sell a car
-        pass
+    def __init__(self, queue, banana1, sem_full, queue_stats):
+        threading.Thread.__init__(self)
+        self.queue = queue
+        self.banana1 = banana1
+        self.sem_full = sem_full
+        self.queue_stats = queue_stats
 
     def run(self):
-        while True:
-            # TODO Add your code here
-            """
-            take the car from the queue
-            signal the factory that there is an empty slot in the queue
-            """
-
-            # Sleep a little after selling a car
-            # Last statement in this for loop - don't change
+        for _ in range(cars_to_be_made):
+            self.sem_full.acquire()  # Wait for a car to be available
+            car = self.queue.get()
+            print(f'Sold: {car.info()}')
+            self.queue_stats[self.queue.size()] += 1  # Track queue size
+            self.banana1.release()  # Signal that a slot is available
             time.sleep(random.random() / (SLEEP_REDUCE_FACTOR))
-
 
 
 def main():
     log = Log(show_terminal=True)
 
-    # TODO Create semaphore(s)
-    # TODO Create queue251 
-    # TODO Create lock(s) ?
+    # Create semaphores
+    banana1 = threading.Semaphore(MAX_QUEUE_SIZE)  # Controls factory production
+    sem_full = threading.Semaphore(0)  # Controls dealer sales
+
+    # Create queue251 
+    queue = Queue251()
 
     # This tracks the length of the car queue during receiving cars by the dealership
     # i.e., update this list each time the dealer receives a car
     queue_stats = [0] * MAX_QUEUE_SIZE
 
-    # TODO create your one factory
-
-    # TODO create your one dealership
+    # Create factory and dealership threads
+    factory = Factory(queue, banana1, sem_full)
+    dealer = Dealer(queue, banana1, sem_full, queue_stats)
 
     log.start_timer()
 
-    # TODO Start factory and dealership
+    # Start factory and dealership threads
+    factory.start()
+    dealer.start()
 
-    # TODO Wait for factory and dealership to complete
+    # Wait for factory and dealership to complete
+    factory.join()
+    dealer.join()
 
-    log.stop_timer(f'All {sum(queue_stats)} have been created')
+    log.stop_timer(f'All {sum(queue_stats)} cars have been created and sold.')
 
     xaxis = [i for i in range(0, MAX_QUEUE_SIZE)]
     plot = Plots()
     plot.bar(xaxis, queue_stats, title=f'{sum(queue_stats)} Produced: Count VS Queue Size', x_label='Queue Size', y_label='Count', filename='Production count vs queue size.png')
-
 
 
 if __name__ == '__main__':
