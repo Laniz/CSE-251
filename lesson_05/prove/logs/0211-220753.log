@@ -1,0 +1,56 @@
+22:07:56| 254 cars have been created. = 2.84812560
+22:07:56| Factories      : 1
+22:07:56| Dealerships    : 1
+22:07:56| Run Time       : 2.8481
+22:07:56| Max queue size : 10
+22:07:56| Factory Stats  : Made = 254 @ [254]
+22:07:56| Dealer Stats   : Sold = 254 @ [254]
+22:07:56| 
+22:07:58| 248 cars have been created. = 2.79758200
+22:07:58| Factories      : 1
+22:07:58| Dealerships    : 2
+22:07:58| Run Time       : 2.7976
+22:07:58| Max queue size : 3
+22:07:58| Factory Stats  : Made = 248 @ [248]
+22:07:58| Dealer Stats   : Sold = 248 @ [126, 122]
+22:07:58| 
+22:08:04| 568 cars have been created. = 6.11461800
+22:08:04| Factories      : 2
+22:08:04| Dealerships    : 1
+22:08:04| Run Time       : 6.1146
+22:08:04| Max queue size : 10
+22:08:04| Factory Stats  : Made = 568 @ [290, 278]
+22:08:04| Dealer Stats   : Sold = 568 @ [568]
+22:08:04| 
+22:08:08| 565 cars have been created. = 3.22682220
+22:08:08| Factories      : 2
+22:08:08| Dealerships    : 2
+22:08:08| Run Time       : 3.2268
+22:08:08| Max queue size : 10
+22:08:08| Factory Stats  : Made = 565 @ [277, 288]
+22:08:08| Dealer Stats   : Sold = 565 @ [272, 293]
+22:08:08| 
+22:08:10| 452 cars have been created. = 2.79938230
+22:08:10| Factories      : 2
+22:08:10| Dealerships    : 5
+22:08:10| Run Time       : 2.7994
+22:08:10| Max queue size : 4
+22:08:10| Factory Stats  : Made = 452 @ [203, 249]
+22:08:10| Dealer Stats   : Sold = 452 @ [81, 77, 108, 108, 78]
+22:08:10| 
+22:08:17| 1199 cars have been created. = 6.94937430
+22:08:17| Factories      : 5
+22:08:17| Dealerships    : 2
+22:08:17| Run Time       : 6.9494
+22:08:17| Max queue size : 10
+22:08:17| Factory Stats  : Made = 1199 @ [276, 224, 253, 200, 246]
+22:08:17| Dealer Stats   : Sold = 1199 @ [565, 634]
+22:08:17| 
+22:08:21| 2658 cars have been created. = 3.80363490
+22:08:21| Factories      : 10
+22:08:21| Dealerships    : 10
+22:08:21| Run Time       : 3.8036
+22:08:21| Max queue size : 8
+22:08:21| Factory Stats  : Made = 2658 @ [233, 256, 300, 299, 270, 294, 266, 244, 216, 280]
+22:08:21| Dealer Stats   : Sold = 2658 @ [277, 243, 246, 316, 238, 274, 262, 299, 208, 295]
+22:08:21| 
