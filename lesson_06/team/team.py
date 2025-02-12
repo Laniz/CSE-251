@@ -38,7 +38,7 @@ def sender(parent_conn, count): # Parent
             for word in text:
                 parent_conn.send(word)
                 parent_conn.send(' ')
-            parent_conn.send('\n')
+            parent_conn.send('\r\n')
             count.value += 1
 
     parent_conn.send(None)
