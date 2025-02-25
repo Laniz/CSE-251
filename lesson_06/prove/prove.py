@@ -2,7 +2,7 @@
 Course: CSE 251 
 Lesson: L06 Prove
 File:   prove.py
-Author: <Add name here>
+Author: shepherd ncube
 
 Purpose: Processing Plant
 
@@ -96,10 +96,10 @@ class Marble_Creator(mp.Process):
     def run(self):
         for _ in range(self.marble_count):
             marble = random.choice(Marble_Creator.colors)
-            self.send_to_bagger.send(marble)  # Send marble to bagger
+            self.send_to_bagger.send(marble)  
             time.sleep(self.delay)
-        self.send_to_bagger.send(None)  # Signal end of marbles
-        self.send_to_bagger.close()  # Close the pipe
+        self.send_to_bagger.send(None) 
+        self.send_to_bagger.close()  
 
 class Bagger(mp.Process):
     """ Receives marbles from the marble creator, then there are enough
@@ -115,17 +115,17 @@ class Bagger(mp.Process):
     def run(self):
         bag = Bag()
         while True:
-            marble = self.receive_from_creator.recv()  # Receive marble from creator
+            marble = self.receive_from_creator.recv() 
             if marble is None:
-                if bag.get_size() > 0:
-                    self.send_to_assembler.send(bag)  # Send remaining marbles
+                # if bag.get_size() > 0:
+                    # self.send_to_assembler.send(bag) 
                 break
             bag.add(marble)
             if bag.get_size() == self.bag_size:
-                self.send_to_assembler.send(bag)  # Send full bag to assembler
-                bag = Bag()  # Start a new bag
+                self.send_to_assembler.send(bag) 
+                bag = Bag() 
                 time.sleep(self.delay)
-        self.send_to_assembler.send(None)  # Signal end of bags
+        self.send_to_assembler.send(None)  
         self.receive_from_creator.close()
         self.send_to_assembler.close()
 
@@ -143,13 +143,13 @@ class Assembler(mp.Process):
 
     def run(self):
         while True:
-            bag = self.receive_from_bagger.recv()  # Receive bag from bagger
+            bag = self.receive_from_bagger.recv() 
             if bag is None:
-                self.send_to_wrapper.send(None)  # Signal end of gifts
+                self.send_to_wrapper.send(None)  
                 break
             large_marble = random.choice(Assembler.marble_names)
             gift = Gift(large_marble, bag)
-            self.send_to_wrapper.send(gift)  # Send gift to wrapper
+            self.send_to_wrapper.send(gift)  
             time.sleep(self.delay)
         self.receive_from_bagger.close()
         self.send_to_wrapper.close()
@@ -161,18 +161,18 @@ class Wrapper(mp.Process):
         mp.Process.__init__(self)
         self.receive_from_assembler = receive_from_assembler
         self.delay = delay
-        self.gift_count = gift_count  # Shared counter
+        self.gift_count = gift_count 
 
     def run(self):
-        with open(BOXES_FILENAME, "w") as file:  # Append mode to save all gifts
+        with open(BOXES_FILENAME, "w") as file:  
             while True:
-                gift = self.receive_from_assembler.recv()  # Receive gift from assembler
+                gift = self.receive_from_assembler.recv()  
                 if gift is None:
                     break
-                timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  # Corrected usage
-                file.write(f"[{timestamp}] {gift}\n")  # Write gift to file
+                timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")  
+                file.write(f"[{timestamp}] {gift}\n")  
                 time.sleep(self.delay)
-                with self.gift_count.get_lock():  # Safely increment gift count
+                with self.gift_count.get_lock(): 
                     self.gift_count.value += 1
         self.receive_from_assembler.close()
 
@@ -217,6 +217,7 @@ def main():
     if os.path.exists(BOXES_FILENAME):
         os.remove(BOXES_FILENAME)
 
+   
     log.write('Create the processes')
     marble_count = settings[MARBLE_COUNT]
     creator_delay = settings[CREATOR_DELAY]
@@ -228,7 +229,7 @@ def main():
     # Create processes
     creator = Marble_Creator(creator_to_bagger, marble_count, creator_delay)
     bagger = Bagger(bagger_to_assembler, bagger_recv, bag_size, bagger_delay)
-    assembler = Assembler(assembler_recv, assembler_to_wrapper, assembler_delay)  # Fixed pipe order
+    assembler = Assembler(assembler_recv, assembler_to_wrapper, assembler_delay)  
     wrapper = Wrapper(wrapper_recv, wrapper_delay, gift_count)
 
     log.write('Starting the processes')

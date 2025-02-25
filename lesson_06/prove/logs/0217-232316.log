@@ -1,0 +1,155 @@
+23:23:16| Marble count     = 1000
+23:23:16| Marble delay     = 0.01
+23:23:16| Marbles in a bag = 7
+23:23:16| Bagger delay     = 0.05
+23:23:16| Assembler delay  = 0.05
+23:23:16| Wrapper delay    = 0.05
+23:23:16| Create the processes
+23:23:16| Starting the processes
+23:23:16| Waiting for processes to finish
+23:23:28| Contents of boxes.txt
+23:23:28| [2025-02-17 23:23:17] Large marble: Apollo, marbles: Pale Goldenrod, Safety Yellow, Royal Red, Maximum Violet, Liver Chestnut, Orange Soda, Cobalt Blue
+23:23:28| [2025-02-17 23:23:17] Large marble: 5-Star, marbles: Liver Chestnut, Lemon Lime, Duke Blue, Spanish Orange, Antique Brass, Neon Pink, Antique Bronze
+23:23:28| [2025-02-17 23:23:17] Large marble: Apollo, marbles: Stop Red, Lavender Blue, Brink Pink, Neon Pink, Mint Green, Zomp, Emerald
+23:23:28| [2025-02-17 23:23:17] Large marble: Big Joe, marbles: Black Coral, Blue Bell, Almond, Brown, White Smoke, Blue-Green, La Salle Green
+23:23:28| [2025-02-17 23:23:17] Large marble: Zeus, marbles: Light Orange, Mint Green, Orange Soda, Royal Red, La Salle Green, Royal Blue, Tuscan Brown
+23:23:28| [2025-02-17 23:23:17] Large marble: Big Joe, marbles: Purple Plum, Maximum Purple, Pastel Blue, Platinum, Lavender Purple, Safety Yellow, Brown
+23:23:28| [2025-02-17 23:23:17] Large marble: Winner, marbles: Neon Dark Green, Auburn, Pale Taupe, Pastel Blue, Dark Moss Green, Silver Pink, Blue
+23:23:28| [2025-02-17 23:23:17] Large marble: Sure Shot, marbles: Light Orange, Antique Bronze, Silver Chalice, Middle Green Yellow, Arylide Yellow, Lilac Luster, Blue
+23:23:28| [2025-02-17 23:23:17] Large marble: Hercules, marbles: Slate Blue, Beaver, Mint Cream, Blue-Green, Maximum Blue, Dark Fuchsia, Mimi Pink
+23:23:28| [2025-02-17 23:23:17] Large marble: 5-Star, marbles: Middle Red Purple, Terra Cotta, Middle Green Yellow, Cobalt Blue, Eerie Black, Gold, Brown
+23:23:28| [2025-02-17 23:23:17] Large marble: Sure Shot, marbles: Beaver, Spanish Orange, Candy Pink, Russian Violet, Middle Green Yellow, Auburn, Vegas Gold
+23:23:28| [2025-02-17 23:23:17] Large marble: Sure Shot, marbles: Dark Fuchsia, Indigo, Mimi Pink, Pale Cerulean, Spanish Orange, Spanish Pink, Royal Blue
+23:23:28| [2025-02-17 23:23:18] Large marble: Big Joe, marbles: Rose Dust, Spanish Orange, Mango Tango, Granny Smith Apple, Pale Cerulean, Outrageous Orange, Pale Taupe
+23:23:28| [2025-02-17 23:23:18] Large marble: Hercules, marbles: Terra Cotta, Mint Cream, Mimi Pink, Honeydew, Eerie Black, Fiery Rose, Thulian Pink
+23:23:28| [2025-02-17 23:23:18] Large marble: Zeus, marbles: Arylide Yellow, Russian Violet, Sheen Green, Silver Chalice, Indigo, Pale Plum, Lumber
+23:23:28| [2025-02-17 23:23:18] Large marble: Hercules, marbles: Orange Soda, Pastel Blue, Pale Plum, Liver Chestnut, Lemon Lime, Honeydew, Dark Moss Green
+23:23:28| [2025-02-17 23:23:18] Large marble: Big Joe, marbles: Neon Silver, Middle Red Purple, Russian Green, Royal Orange, Orange Soda, Venetian Red, Middle Red Purple
+23:23:28| [2025-02-17 23:23:18] Large marble: Apollo, marbles: Lavender Blue, Spanish Carmine, Rose Dust, Thulian Pink, Cobalt Blue, White Smoke, Beaver
+23:23:28| [2025-02-17 23:23:18] Large marble: Sure Shot, marbles: Emerald, Neon Silver, Emerald, Pale Plum, Cotton Candy, Rose Quartz, Mango Tango
+23:23:28| [2025-02-17 23:23:18] Large marble: Winner, marbles: Candy Pink, Lumber, Gold, Emerald, Isabelline, Antique Brass, Neon Dark Green
+23:23:28| [2025-02-17 23:23:18] Large marble: Big Joe, marbles: Indigo, Thulian Pink, Dark Moss Green, Sheen Green, Orange Soda, Granny Smith Apple, Sheen Green
+23:23:28| [2025-02-17 23:23:18] Large marble: Big Joe, marbles: Slate Blue, Stop Red, Golden Yellow, Royal Blue, Lemon Lime, Eerie Black, Indigo
+23:23:28| [2025-02-17 23:23:18] Large marble: Hercules, marbles: Cobalt Blue, Ruby, Royal Orange, Safety Yellow, Cobalt Blue, Platinum, Liver Chestnut
+23:23:28| [2025-02-17 23:23:18] Large marble: 5-Star, marbles: Royal Blue, Neon Dark Green, Sage, Safety Yellow, Neon Dark Green, Rose Quartz, Spanish Pink
+23:23:28| [2025-02-17 23:23:18] Large marble: Spinner, marbles: Emerald, Brink Pink, Black Coral, Spanish Orange, Rose Quartz, Silver Chalice, Mimi Pink
+23:23:28| [2025-02-17 23:23:19] Large marble: Sure Shot, marbles: Granny Smith Apple, Orange Soda, Ivory, Ivory, Almond, Venetian Red, Dark Fuchsia
+23:23:28| [2025-02-17 23:23:19] Large marble: Hercules, marbles: Spanish Pink, Middle Green Yellow, Shandy, Golden Yellow, Mint Cream, Honeydew, Orange Soda
+23:23:28| [2025-02-17 23:23:19] Large marble: Hercules, marbles: Black Coral, Chinese Red, Granny Smith Apple, Russian Green, Safety Yellow, Orange Soda, Pastel Blue
+23:23:28| [2025-02-17 23:23:19] Large marble: 5-Star, marbles: Blue-Green, Lavender Blue, Pale Goldenrod, Mint Cream, Blue Bell, Royal Orange, Zomp
+23:23:28| [2025-02-17 23:23:19] Large marble: Big Joe, marbles: Bistre Brown, La Salle Green, Duke Blue, Dark Fuchsia, Brink Pink, Mint Green, Blue-Green
+23:23:28| [2025-02-17 23:23:19] Large marble: 5-Star, marbles: Venetian Red, Sage, Gold, Icterine, Brink Pink, Neon Silver, Neon Dark Green
+23:23:28| [2025-02-17 23:23:19] Large marble: Zeus, marbles: Arylide Yellow, Mango Tango, Lilac Luster, Chinese Red, Terra Cotta, Light Orchid, Royal Blue
+23:23:28| [2025-02-17 23:23:19] Large marble: Spinner, marbles: Pale Plum, Emerald, Isabelline, Emerald, Gold, Golden Yellow, Mint Green
+23:23:28| [2025-02-17 23:23:19] Large marble: Lucky, marbles: Honeydew, Safety Yellow, Purple, Orange Soda, Lavender Blue, Purple Plum, Mango Tango
+23:23:28| [2025-02-17 23:23:19] Large marble: Zeus, marbles: Black Coral, Eerie Black, Maximum Violet, Arylide Yellow, Pastel Gray, Sage, Spanish Carmine
+23:23:28| [2025-02-17 23:23:19] Large marble: Sure Shot, marbles: Chinese Red, Granny Smith Apple, Orange Peel, Lavender Blue, Brink Pink, Blue-Green, Tuscan Brown
+23:23:28| [2025-02-17 23:23:19] Large marble: Spinner, marbles: Slate Blue, Rose Dust, Auburn, Rose Quartz, Antique Bronze, Brink Pink, Lavender Blue
+23:23:28| [2025-02-17 23:23:19] Large marble: Hercules, marbles: Brink Pink, Rose Quartz, Pastel Gray, Russian Violet, White Smoke, Russian Green, Mulberry
+23:23:28| [2025-02-17 23:23:19] Large marble: Winner, marbles: Maximum Blue, Blue, Ruby, Chinese Red, Light Orchid, Orange Soda, Pale Taupe
+23:23:28| [2025-02-17 23:23:20] Large marble: Big Joe, marbles: Outrageous Orange, Lilac Luster, Safety Yellow, Icterine, Gold, Gold, Purple Plum
+23:23:28| [2025-02-17 23:23:20] Large marble: Big Joe, marbles: Emerald, Spanish Orange, Antique Bronze, Green, Neon Dark Green, Antique Brass, Blue
+23:23:28| [2025-02-17 23:23:20] Large marble: Zeus, marbles: Silver Chalice, Golden Yellow, Pale Cerulean, Spanish Orange, Pale Goldenrod, Neon Pink, Maximum Purple
+23:23:28| [2025-02-17 23:23:20] Large marble: Sure Shot, marbles: Candy Pink, Outrageous Orange, Outrageous Orange, Blue Bell, Pale Taupe, Mulberry, Terra Cotta
+23:23:28| [2025-02-17 23:23:20] Large marble: Spinner, marbles: Royal Red, Cotton Candy, Pale Cerulean, Terra Cotta, Lilac Luster, Pale Cerulean, Lumber
+23:23:28| [2025-02-17 23:23:20] Large marble: Hercules, marbles: Slate Blue, Platinum, Pale Plum, Dark Moss Green, Eerie Black, Emerald, Zomp
+23:23:28| [2025-02-17 23:23:20] Large marble: Hercules, marbles: Pale Taupe, Spanish Pink, Tuscan Brown, Royal Orange, Neon Dark Green, Emerald, Royal Orange
+23:23:28| [2025-02-17 23:23:20] Large marble: Spinner, marbles: White Smoke, Mint Cream, Stop Red, Bistre Brown, Pale Cerulean, Spanish Pink, Cotton Candy
+23:23:28| [2025-02-17 23:23:20] Large marble: Spinner, marbles: Light Orchid, Light Orchid, Lavender Purple, Purple Plum, Pastel Gray, Antique Bronze, Mode Beige
+23:23:28| [2025-02-17 23:23:20] Large marble: Winner, marbles: Spanish Carmine, Brink Pink, Pale Plum, Golden Yellow, Stop Red, Emerald, Royal Orange
+23:23:28| [2025-02-17 23:23:20] Large marble: Hercules, marbles: Bistre Brown, Russian Violet, Royal Red, Mode Beige, Brink Pink, Neon Dark Green, Light Orchid
+23:23:28| [2025-02-17 23:23:20] Large marble: Apollo, marbles: Terra Cotta, Middle Green Yellow, Lavender Purple, Platinum, Dark Fuchsia, Golden Yellow, Shandy
+23:23:28| [2025-02-17 23:23:20] Large marble: Zeus, marbles: Maximum Purple, Cotton Candy, Pale Goldenrod, Pale Taupe, Green, Isabelline, Silver Pink
+23:23:28| [2025-02-17 23:23:21] Large marble: Zeus, marbles: Pale Cerulean, Spanish Pink, Green, Pastel Blue, Cobalt Blue, Spanish Orange, Lavender Blue
+23:23:28| [2025-02-17 23:23:21] Large marble: Lucky, marbles: Middle Green, Slate Blue, Middle Red Purple, Light Orange, Maximum Blue, Zomp, Brown
+23:23:28| [2025-02-17 23:23:21] Large marble: Hercules, marbles: Sage, Shandy, Blue Bell, Silver Pink, Mode Beige, Blue Bell, Blue-Green
+23:23:28| [2025-02-17 23:23:21] Large marble: Spinner, marbles: Neon Dark Green, Neon Dark Green, Mimi Pink, Dark Fuchsia, Antique Brass, Platinum, Gold
+23:23:28| [2025-02-17 23:23:21] Large marble: Lucky, marbles: Blue, Chinese Red, Black Coral, Antique Brass, White Smoke, Zomp, Middle Green Yellow
+23:23:28| [2025-02-17 23:23:21] Large marble: Winner, marbles: Brown, Pastel Blue, Dark Moss Green, Golden Yellow, Mint Cream, Sheen Green, Lavender Purple
+23:23:28| [2025-02-17 23:23:21] Large marble: Big Joe, marbles: Thulian Pink, Gold, Lavender Purple, Lumber, Black Coral, Middle Red Purple, Russian Green
+23:23:28| [2025-02-17 23:23:21] Large marble: Big Joe, marbles: Rose Dust, Cobalt Blue, Spanish Orange, Pale Cerulean, Blue-Green, Icterine, Antique Brass
+23:23:28| [2025-02-17 23:23:21] Large marble: Sure Shot, marbles: Black Coral, Silver Pink, Antique Brass, Vegas Gold, Lumber, Royal Orange, Lavender Blue
+23:23:28| [2025-02-17 23:23:21] Large marble: Sure Shot, marbles: Pastel Gray, Russian Violet, Middle Green, Blue-Green, Russian Violet, Granny Smith Apple, Venetian Red
+23:23:28| [2025-02-17 23:23:21] Large marble: Apollo, marbles: Auburn, Almond, Pale Goldenrod, Purple Plum, Middle Green, Rose Quartz, Stop Red
+23:23:28| [2025-02-17 23:23:21] Large marble: Winner, marbles: Arylide Yellow, Pale Taupe, Middle Green Yellow, Duke Blue, Pastel Gray, Lemon Lime, Middle Green Yellow
+23:23:28| [2025-02-17 23:23:21] Large marble: Big Joe, marbles: Spanish Pink, Auburn, Purple, Sage, Spanish Orange, Cotton Candy, Zomp
+23:23:28| [2025-02-17 23:23:22] Large marble: Sure Shot, marbles: Middle Green Yellow, Lavender Purple, Lavender Purple, Cobalt Blue, Royal Blue, Orange Peel, Honeydew
+23:23:28| [2025-02-17 23:23:22] Large marble: Sure Shot, marbles: Maximum Purple, Lavender Purple, Blue Bell, Lumber, Stop Red, Black Coral, Lilac Luster
+23:23:28| [2025-02-17 23:23:22] Large marble: Winner, marbles: Maximum Violet, Russian Violet, Platinum, Pale Plum, Middle Red Purple, Mint Green, Mango Tango
+23:23:28| [2025-02-17 23:23:22] Large marble: Spinner, marbles: Antique Brass, Royal Blue, Pale Goldenrod, Royal Orange, Venetian Red, Pastel Gray, Emerald
+23:23:28| [2025-02-17 23:23:22] Large marble: Winner, marbles: Purple, Neon Silver, Maximum Purple, Pale Cerulean, Chinese Red, Sheen Green, Royal Red
+23:23:28| [2025-02-17 23:23:22] Large marble: Hercules, marbles: Lilac Luster, Rose Dust, Zomp, Silver Pink, Duke Blue, Lumber, Rose Quartz
+23:23:28| [2025-02-17 23:23:22] Large marble: Apollo, marbles: Mango Tango, Eerie Black, Pale Goldenrod, Lumber, Bistre Brown, Stop Red, Neon Silver
+23:23:28| [2025-02-17 23:23:22] Large marble: Winner, marbles: Shandy, Spanish Orange, Thulian Pink, Fiery Rose, Pale Goldenrod, Light Orange, Terra Cotta
+23:23:28| [2025-02-17 23:23:22] Large marble: Sure Shot, marbles: Lumber, Safety Yellow, Isabelline, Safety Yellow, Sage, Neon Dark Green, Fiery Rose
+23:23:28| [2025-02-17 23:23:22] Large marble: Apollo, marbles: Antique Bronze, Pale Goldenrod, Dark Fuchsia, Honeydew, Orange Soda, Chinese Red, Granny Smith Apple
+23:23:28| [2025-02-17 23:23:22] Large marble: Hercules, marbles: Lilac Luster, Orange Soda, Antique Brass, Spanish Orange, Mint Green, Antique Bronze, Orange Peel
+23:23:28| [2025-02-17 23:23:22] Large marble: Zeus, marbles: Sage, Rose Dust, Spanish Pink, Royal Blue, Blue, Pastel Gray, Honeydew
+23:23:28| [2025-02-17 23:23:22] Large marble: Lucky, marbles: Russian Violet, Venetian Red, Safety Yellow, Royal Orange, Mulberry, Green, Stop Red
+23:23:28| [2025-02-17 23:23:22] Large marble: Lucky, marbles: Sage, Safety Yellow, Lemon Lime, Pale Goldenrod, Slate Blue, Beaver, La Salle Green
+23:23:28| [2025-02-17 23:23:23] Large marble: Zeus, marbles: Liver Chestnut, Orange Soda, Brown, Purple Plum, Chinese Red, Sage, Granny Smith Apple
+23:23:28| [2025-02-17 23:23:23] Large marble: Hercules, marbles: Mulberry, Maximum Violet, Candy Pink, Stop Red, Candy Pink, Blue Bell, White Smoke
+23:23:28| [2025-02-17 23:23:23] Large marble: Hercules, marbles: Black Coral, Golden Yellow, Maximum Blue, Green, Lavender Blue, Mulberry, Slate Blue
+23:23:28| [2025-02-17 23:23:23] Large marble: Big Joe, marbles: Ivory, Middle Green Yellow, Light Orange, Middle Red Purple, Mint Green, Venetian Red, Neon Silver
+23:23:28| [2025-02-17 23:23:23] Large marble: Hercules, marbles: Pale Plum, Granny Smith Apple, Russian Violet, Pastel Gray, Vegas Gold, Mint Green, Spanish Orange
+23:23:28| [2025-02-17 23:23:23] Large marble: Spinner, marbles: Lavender Blue, Duke Blue, Mimi Pink, Rose Quartz, Royal Red, Rose Quartz, Lavender Purple
+23:23:28| [2025-02-17 23:23:23] Large marble: Hercules, marbles: Lavender Purple, Orange Peel, Mango Tango, Mint Cream, Neon Pink, Orange Peel, Fiery Rose
+23:23:28| [2025-02-17 23:23:23] Large marble: Spinner, marbles: Arylide Yellow, Rose Quartz, Arylide Yellow, Icterine, Orange Peel, Gold, Zomp
+23:23:28| [2025-02-17 23:23:23] Large marble: Hercules, marbles: Blue Bell, Tuscan Brown, Orange Peel, Isabelline, Brink Pink, Orange Soda, Sage
+23:23:28| [2025-02-17 23:23:23] Large marble: Zeus, marbles: Lemon Lime, Platinum, Purple, Purple, Royal Blue, Silver Chalice, Orange Soda
+23:23:28| [2025-02-17 23:23:23] Large marble: Sure Shot, marbles: Mimi Pink, Silver Pink, Lavender Blue, Mint Green, Pale Taupe, Antique Brass, Maximum Purple
+23:23:28| [2025-02-17 23:23:23] Large marble: Spinner, marbles: Mango Tango, Spanish Orange, Spanish Orange, Neon Dark Green, Zomp, Blue Bell, Tuscan Brown
+23:23:28| [2025-02-17 23:23:23] Large marble: Lucky, marbles: Mimi Pink, Neon Dark Green, Stop Red, Silver Pink, Neon Dark Green, Thulian Pink, Rose Dust
+23:23:28| [2025-02-17 23:23:24] Large marble: Zeus, marbles: Pale Plum, Ivory, Vegas Gold, Neon Silver, Russian Green, Venetian Red, Indigo
+23:23:28| [2025-02-17 23:23:24] Large marble: Sure Shot, marbles: Dark Moss Green, Lavender Purple, Royal Red, Spanish Pink, Vegas Gold, Outrageous Orange, Mulberry
+23:23:28| [2025-02-17 23:23:24] Large marble: Winner, marbles: Pale Plum, Middle Green, Antique Brass, Green, Russian Green, Brown, Blue Bell
+23:23:28| [2025-02-17 23:23:24] Large marble: Sure Shot, marbles: Middle Green, Lavender Blue, Gold, Lilac Luster, Chinese Red, Honeydew, Granny Smith Apple
+23:23:28| [2025-02-17 23:23:24] Large marble: Spinner, marbles: Almond, Mimi Pink, Auburn, Duke Blue, Spanish Pink, Mint Cream, Orange Peel
+23:23:28| [2025-02-17 23:23:24] Large marble: Apollo, marbles: Royal Orange, Thulian Pink, Blue, Mint Cream, Tuscan Brown, Venetian Red, Light Orchid
+23:23:28| [2025-02-17 23:23:24] Large marble: Zeus, marbles: Mint Green, Pastel Gray, Terra Cotta, Granny Smith Apple, Lavender Blue, Blue Bell, Orange Peel
+23:23:28| [2025-02-17 23:23:24] Large marble: Winner, marbles: Sheen Green, Light Orange, Fiery Rose, Royal Orange, Royal Red, Thulian Pink, Middle Green
+23:23:28| [2025-02-17 23:23:24] Large marble: Big Joe, marbles: Blue, Shandy, Antique Bronze, Lumber, Light Orchid, Pale Goldenrod, Lumber
+23:23:28| [2025-02-17 23:23:24] Large marble: Lucky, marbles: Lumber, Neon Dark Green, Neon Silver, Neon Dark Green, Shandy, Almond, Rose Dust
+23:23:28| [2025-02-17 23:23:24] Large marble: Zeus, marbles: Dark Fuchsia, Light Orange, Mulberry, Cobalt Blue, Dark Moss Green, Golden Yellow, Indigo
+23:23:28| [2025-02-17 23:23:24] Large marble: Hercules, marbles: Cobalt Blue, Platinum, Terra Cotta, Lavender Blue, Vegas Gold, Bistre Brown, Light Orchid
+23:23:28| [2025-02-17 23:23:24] Large marble: Hercules, marbles: Sheen Green, White Smoke, Mimi Pink, Middle Green Yellow, Arylide Yellow, Golden Yellow, Middle Red Purple
+23:23:28| [2025-02-17 23:23:25] Large marble: Apollo, marbles: Ivory, Platinum, Auburn, Dark Moss Green, Tuscan Brown, Middle Green, Light Orange
+23:23:28| [2025-02-17 23:23:25] Large marble: Lucky, marbles: Lavender Blue, Russian Green, Shandy, Pale Cerulean, Pale Cerulean, Ruby, Mulberry
+23:23:28| [2025-02-17 23:23:25] Large marble: Apollo, marbles: Granny Smith Apple, Middle Green Yellow, Brown, Ruby, Rose Quartz, Auburn, Isabelline
+23:23:28| [2025-02-17 23:23:25] Large marble: Winner, marbles: Pastel Blue, Orange Soda, Mulberry, Bistre Brown, Brown, Blue-Green, Fiery Rose
+23:23:28| [2025-02-17 23:23:25] Large marble: Spinner, marbles: Safety Yellow, Middle Green Yellow, Royal Red, Blue, Lemon Lime, Emerald, Spanish Orange
+23:23:28| [2025-02-17 23:23:25] Large marble: Hercules, marbles: Pale Plum, Lilac Luster, Russian Violet, Cotton Candy, Sage, White Smoke, Brown
+23:23:28| [2025-02-17 23:23:25] Large marble: Apollo, marbles: Royal Red, Almond, Purple, Pale Taupe, Middle Green, Light Orange, Candy Pink
+23:23:28| [2025-02-17 23:23:25] Large marble: Lucky, marbles: Dark Moss Green, Chinese Red, Mint Green, Purple Plum, Safety Yellow, Granny Smith Apple, La Salle Green
+23:23:28| [2025-02-17 23:23:25] Large marble: Big Joe, marbles: Pale Plum, Maximum Violet, Honeydew, Rose Quartz, Isabelline, Lavender Purple, Blue Bell
+23:23:28| [2025-02-17 23:23:25] Large marble: Apollo, marbles: Sage, White Smoke, Pale Goldenrod, Liver Chestnut, Lavender Purple, Bistre Brown, Stop Red
+23:23:28| [2025-02-17 23:23:25] Large marble: Hercules, marbles: Gold, Sheen Green, Terra Cotta, Safety Yellow, Isabelline, Lavender Blue, Royal Red
+23:23:28| [2025-02-17 23:23:25] Large marble: Sure Shot, marbles: Russian Violet, Mango Tango, Eerie Black, Rose Quartz, Auburn, Sheen Green, Antique Bronze
+23:23:28| [2025-02-17 23:23:25] Large marble: Lucky, marbles: Slate Blue, Gold, Royal Blue, Stop Red, Cobalt Blue, Purple Plum, Eerie Black
+23:23:28| [2025-02-17 23:23:26] Large marble: Spinner, marbles: Shandy, Lemon Lime, Outrageous Orange, Blue, Indigo, Mimi Pink, Royal Orange
+23:23:28| [2025-02-17 23:23:26] Large marble: Spinner, marbles: Antique Brass, Lavender Blue, Emerald, Gold, Silver Pink, Light Orchid, Duke Blue
+23:23:28| [2025-02-17 23:23:26] Large marble: Spinner, marbles: Mimi Pink, Tuscan Brown, Spanish Pink, Mode Beige, Venetian Red, Pale Cerulean, Lilac Luster
+23:23:28| [2025-02-17 23:23:26] Large marble: Big Joe, marbles: Mango Tango, Golden Yellow, Outrageous Orange, Honeydew, Pale Taupe, Mint Cream, Ruby
+23:23:28| [2025-02-17 23:23:26] Large marble: Lucky, marbles: Cobalt Blue, Maximum Purple, Ruby, Gold, La Salle Green, Purple Plum, Mode Beige
+23:23:28| [2025-02-17 23:23:26] Large marble: Apollo, marbles: Lilac Luster, Purple, Mango Tango, Lemon Lime, Pastel Gray, Indigo, Antique Brass
+23:23:28| [2025-02-17 23:23:26] Large marble: Winner, marbles: Zomp, Neon Pink, Mango Tango, Royal Orange, Middle Red Purple, Blue, White Smoke
+23:23:28| [2025-02-17 23:23:26] Large marble: Lucky, marbles: Light Orange, Light Orange, Mint Cream, Antique Bronze, Platinum, Auburn, Terra Cotta
+23:23:28| [2025-02-17 23:23:26] Large marble: Apollo, marbles: Mint Green, Platinum, Dark Moss Green, Royal Blue, Slate Blue, Royal Orange, Orange Peel
+23:23:28| [2025-02-17 23:23:26] Large marble: Lucky, marbles: Auburn, Terra Cotta, Brown, Sheen Green, Lilac Luster, Antique Brass, Blue
+23:23:28| [2025-02-17 23:23:26] Large marble: Big Joe, marbles: Thulian Pink, Indigo, Purple, Sage, Pale Plum, Gold, Shandy
+23:23:28| [2025-02-17 23:23:26] Large marble: Lucky, marbles: Sage, Middle Red Purple, Orange Soda, Blue Bell, Dark Moss Green, Maximum Violet, Dark Fuchsia
+23:23:28| [2025-02-17 23:23:26] Large marble: Lucky, marbles: Pastel Blue, Lavender Purple, Pale Cerulean, Mulberry, Middle Green, Orange Soda, Orange Soda
+23:23:28| [2025-02-17 23:23:26] Large marble: Spinner, marbles: Spanish Pink, Pastel Blue, Auburn, Pale Goldenrod, Outrageous Orange, Dark Moss Green, Sheen Green
+23:23:28| [2025-02-17 23:23:27] Large marble: Zeus, marbles: Pastel Gray, Gold, Lavender Purple, Russian Violet, Honeydew, Pale Taupe, Safety Yellow
+23:23:28| [2025-02-17 23:23:27] Large marble: Zeus, marbles: Rose Dust, Ivory, Spanish Orange, Dark Fuchsia, Silver Pink, Icterine, Mimi Pink
+23:23:28| [2025-02-17 23:23:27] Large marble: Zeus, marbles: Russian Violet, Lilac Luster, Pale Taupe, Green, Eerie Black, Orange Soda, Mimi Pink
+23:23:28| [2025-02-17 23:23:27] Large marble: Big Joe, marbles: Cotton Candy, Pale Cerulean, Ivory, Eerie Black, Zomp, Emerald, Royal Blue
+23:23:28| [2025-02-17 23:23:27] Large marble: Lucky, marbles: Chinese Red, Russian Violet, Gold, Stop Red, Thulian Pink, Mimi Pink, Emerald
+23:23:28| [2025-02-17 23:23:27] Large marble: Zeus, marbles: Royal Red, Golden Yellow, Spanish Carmine, Outrageous Orange, Terra Cotta, Purple Plum, Maximum Blue
+23:23:28| [2025-02-17 23:23:27] Large marble: Spinner, marbles: Gold, Silver Chalice, Rose Quartz, White Smoke, Blue, Gold, Middle Green
+23:23:28| [2025-02-17 23:23:27] Large marble: Winner, marbles: Royal Red, Green, Purple, Pale Goldenrod, Spanish Orange, Ruby, Beaver
+23:23:28| [2025-02-17 23:23:27] Large marble: Sure Shot, marbles: Blue Bell, Arylide Yellow, Neon Dark Green, Maximum Blue, Rose Dust, Lilac Luster, Venetian Red
+23:23:28| [2025-02-17 23:23:27] Large marble: Lucky, marbles: Chinese Red, Maximum Purple, Platinum, Golden Yellow, Vegas Gold, Rose Dust, Duke Blue
+23:23:28| [2025-02-17 23:23:27] Large marble: Apollo, marbles: Neon Pink, Light Orchid, Isabelline, Gold, Silver Chalice, Arylide Yellow
+23:23:28| Total gifts created: 143
+23:23:28| Total time = 11.89965810

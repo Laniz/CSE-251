@@ -14,9 +14,18 @@ below before submitting this file:
 Note: each of the 5 task functions need to return a string.  They should not print anything.
 
 TODO:
-
-Add your comments here on the pool sizes that you used for your assignment and why they were the best choices.
 """
+
+'''
+I only have 8 cores on my computer, and here is how I decided to split them: 
+Using all 8 cores actually slowed the run time by 2 seconds. I then decided to prioritize the most CPU-dependent tasks, leaving everything else on 1 core. 
+I also left all tasks that are I/O-bound on 1 core, as they cannot be sped up by using more processes
+Prime checking (CPU bound and heavy) = 2
+Word search (I/O-bound) = 1
+Uppercase conversion (Cpu bound, but not heavy) = 1
+Summation (CPU bound and heavy) = 2
+Web requests (I/O-bound) = 1
+'''
 
 from datetime import datetime, timedelta
 import requests
@@ -26,7 +35,7 @@ import numpy as np
 import glob
 import math 
 
-# Include cse 251 common Python files - Dont change
+# Include cse 251 common Python files - Don't change
 from cse251 import *
 
 # Constants - Don't change
@@ -38,10 +47,11 @@ TYPE_NAME   = 'name'
 
 # TODO: Change the pool sizes and explain your reasoning in the header comment
 
-PRIME_POOL_SIZE = 1
+
+PRIME_POOL_SIZE = 2
 WORD_POOL_SIZE  = 1
 UPPER_POOL_SIZE = 1
-SUM_POOL_SIZE   = 1
+SUM_POOL_SIZE   = 2
 NAME_POOL_SIZE  = 1
 
 # Global lists to collect the task results
@@ -75,7 +85,14 @@ def task_prime(value):
             - or -
         {value} is not prime
     """
-    pass
+    if is_prime(value) == True:
+        # result_primes.append(f"{value:,} is prime")
+        pre_results = f"{value:,} is prime"
+        return pre_results
+    else:
+        # result_primes.append(f"{value:,} is not prime")
+        pre_results_2 = f"{value:,} is not prime"
+        return pre_results_2
 
 
 def task_word(word):
@@ -86,7 +103,15 @@ def task_word(word):
             - or -
         {word} not found *****
     """
-    pass
+    with open('words.txt') as f:
+        if word in f.read():
+            # result_words.append(f"{word} Found")
+            pre_results = f"{word} Found"
+            return(pre_results)
+        else:
+            # result_words.append(f"{word} not found")
+            pre_results_2 = f"{word} not found"
+            return(pre_results_2)
 
 
 def task_upper(text):
@@ -94,7 +119,11 @@ def task_upper(text):
     Add the following to the global list:
         {text} ==>  uppercase version of {text}
     """
-    pass
+    stripped_text = text.strip()
+    upper_case = stripped_text.upper()
+    # result_upper.append(f"{stripped_text} ==> {upper_case}")
+    pre_results = f"{stripped_text} ==> {upper_case}"
+    return(pre_results)
 
 
 def task_sum(start_value, end_value):
@@ -103,7 +132,14 @@ def task_sum(start_value, end_value):
         sum of all numbers between start_value and end_value
         answer = {start_value:,} to {end_value:,} = {total:,}
     """
-    pass
+    list_of_numbers = []
+    for i in range(start_value, end_value):
+        list_of_numbers.append(i)
+    
+    total = sum(list_of_numbers)
+    # result_sums.append(f"sum of {start_value:,} to {end_value:,} = {total:,}")
+    pre_results = f"sum of {start_value:,} to {end_value:,} = {total:,}"
+    return(pre_results)
 
 
 def task_name(url):
@@ -114,43 +150,72 @@ def task_name(url):
             - or -
         {url} had an error receiving the information
     """
-    pass
+    url1 = url
+    url_2 = f"{url1}"
+    response = requests.get(url_2)
+    data = response.json()
 
+    if response.status_code != 200:
+        # result_names.append(f"{url_2} had an error receiving the information")
+        pre_results = f"{url_2} had an error receiving the information"
+        return(pre_results)
+    else:
+        name = data["name"]
+        # result_names.append(f"{url_2} has name {name}")
+        pre_results_2 = f"{url_2} has name {name}"
+        return(pre_results_2)
+
+    
+def collect_result(result_list, result):
+    """Callback function to append results to the global list."""
+    result_list.append(result)
 
 def main():
     log = Log(show_terminal=True)
     log.start_timer()
 
-    # TODO Create process pools
-
-    # TODO change the following if statements to start the pools
-    
     count = 0
-    task_files = glob.glob("tasks/*.task")
-    for filename in task_files:
-        # print()
-        # print(filename)
-        task = load_json_file(filename)
-        print(task)
-        count += 1
-        task_type = task['task']
-        if task_type == TYPE_PRIME:
-            task_prime(task['value'])
-        elif task_type == TYPE_WORD:
-            task_word(task['word'])
-        elif task_type == TYPE_UPPER:
-            task_upper(task['text'])
-        elif task_type == TYPE_SUM:
-            task_sum(task['start'], task['end'])
-        elif task_type == TYPE_NAME:
-            task_name(task['url'])
-        else:
-            log.write(f'Error: unknown task type {task_type}')
+    with mp.Pool(processes=PRIME_POOL_SIZE) as prime_pool, \
+         mp.Pool(processes=WORD_POOL_SIZE) as word_pool, \
+         mp.Pool(processes=UPPER_POOL_SIZE) as upper_pool, \
+         mp.Pool(processes=SUM_POOL_SIZE) as sum_pool, \
+         mp.Pool(processes=NAME_POOL_SIZE) as name_pool:
 
-    # TODO wait on the pools
+        task_files = glob.glob("tasks/*.task")
+        for filename in task_files:
+            task = load_json_file(filename)
+            count += 1
+            task_type = task['task']
+
+            if task_type == TYPE_PRIME:
+                prime_pool.apply_async(task_prime, args=(task['value'],), callback=lambda res: collect_result(result_primes, res))
+            elif task_type == TYPE_WORD:
+                word_pool.apply_async(task_word, args=(task['word'],), callback=lambda res: collect_result(result_words, res))
+            elif task_type == TYPE_UPPER:
+                upper_pool.apply_async(task_upper, args=(task['text'],), callback=lambda res: collect_result(result_upper, res))
+            elif task_type == TYPE_SUM:
+                sum_pool.apply_async(task_sum, args=(task['start'], task['end']), callback=lambda res: collect_result(result_sums, res))
+            elif task_type == TYPE_NAME:
+                name_pool.apply_async(task_name, args=(task['url'],), callback=lambda res: collect_result(result_names, res))
+            else:
+                log.write(f'Error: unknown task type {task_type}')
+
+        # Wait on the pools  
+        prime_pool.close()
+        word_pool.close()
+        upper_pool.close()
+        sum_pool.close()
+        name_pool.close()
+
+        prime_pool.join()
+        word_pool.join()
+        upper_pool.join()
+        sum_pool.join()
+        name_pool.join()  
 
     # DO NOT change any code below this line!
     #---------------------------------------------------------------------------
+
     def log_list(lst, log):
         for item in lst:
             log.write(item)

@@ -93,8 +93,13 @@ def main():
         return
     api_urls = response.json()
 
+    # print(f"\n\n this is the api url {api_urls} \n\n")
+
     # Fetch Film 6 Details
     film_6_url = api_urls['films'] + '6'
+
+    print(f"\n\n this is the api for film 6 {film_6_url} \n\n")
+
     response = requests.get(film_6_url)
     if response.status_code != 200:
         print("Failed to retrieve film 6 data.")
