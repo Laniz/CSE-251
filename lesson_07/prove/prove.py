@@ -2,7 +2,7 @@
 Course: CSE 251 
 Lesson: L07 Prove
 File:   prove.py
-Author: <Add name here>
+Author: Shepherd Ncube
 
 Purpose: Process Task Files.
 
@@ -17,9 +17,15 @@ TODO:
 """
 
 '''
-I only have 8 cores on my computer, and here is how I decided to split them: 
-Using all 8 cores actually slowed the run time by 2 seconds. I then decided to prioritize the most CPU-dependent tasks, leaving everything else on 1 core. 
-I also left all tasks that are I/O-bound on 1 core, as they cannot be sped up by using more processes
+I have 8 cores on my computer. Initial attempts using all 8 cores slowed the runtime. 
+I prioritized CPU-dependent tasks, allocating more cores to them, and kept I/O-bound tasks on a single core.  
+
+Prime checking & Summation (CPU-bound heavy):These tasks are computationally intensive.  2 processes allow them to run at their fastest, maximizing core utilization.
+
+Word search & Web requests (I/O-bound). These tasks are primarily I/O-bound, waiting for file access or network responses. 1 core for each is suffient
+
+Uppercase conversion (CPU-bound, not heavy). This task is CPU-bound but not computationally intensive. A single process is sufficient. 1 core is also enough here.
+
 Prime checking (CPU bound and heavy) = 2
 Word search (I/O-bound) = 1
 Uppercase conversion (Cpu bound, but not heavy) = 1
@@ -167,7 +173,7 @@ def task_name(url):
 
     
 def collect_result(result_list, result):
-    """Callback function to append results to the global list."""
+    # Callback function to append results to the global list.
     result_list.append(result)
 
 def main():
