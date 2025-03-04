@@ -1,0 +1,43 @@
+19:11:22| ****************************************
+19:11:22| Part 2
+19:11:22| 
+19:11:22| File: ./mazes/very-small.bmp
+19:11:22| Number of drawing commands = 50
+19:11:22| Number of threads created  = 0
+19:11:27| 
+19:11:27| File: ./mazes/very-small-loops.bmp
+19:11:27| Number of drawing commands = 170
+19:11:27| Number of threads created  = 0
+19:11:29| 
+19:11:29| File: ./mazes/small.bmp
+19:11:29| Number of drawing commands = 1090
+19:11:29| Number of threads created  = 0
+19:11:32| 
+19:11:32| File: ./mazes/small-loops.bmp
+19:11:32| Number of drawing commands = 1090
+19:11:32| Number of threads created  = 0
+19:11:34| 
+19:11:34| File: ./mazes/small-odd.bmp
+19:11:34| Number of drawing commands = 1090
+19:11:34| Number of threads created  = 0
+19:11:41| 
+19:11:41| File: ./mazes/small-open.bmp
+19:11:41| Number of drawing commands = 1090
+19:11:41| Number of threads created  = 0
+19:11:42| 
+19:11:42| File: ./mazes/large.bmp
+19:11:42| Number of drawing commands = 16642
+19:11:42| Number of threads created  = 0
+19:11:42| 
+19:11:42| File: ./mazes/large-loops.bmp
+19:11:42| Number of drawing commands = 16642
+19:11:42| Number of threads created  = 0
+19:11:43| 
+19:11:43| File: ./mazes/large-squares.bmp
+19:11:43| Number of drawing commands = 16642
+19:11:43| Number of threads created  = 0
+19:11:43| 
+19:11:43| File: ./mazes/large-open.bmp
+19:11:43| Number of drawing commands = 3601
+19:11:43| Number of threads created  = 0
+19:11:44| ****************************************
