@@ -1,3 +1,38 @@
+"""
+Course: CSE 251 
+Lesson: L09 Prove Part 2
+File:   prove_part_2.py
+Author: Shepherd Ncube
+
+Purpose: Part 2 of prove 9, finding the path to the end of a maze using recursion.
+
+Instructions:
+- Do not create classes for this assignment, just functions.
+- Do not use any other Python modules other than the ones included.
+- You MUST use recursive threading to find the end of the maze.
+- Each thread MUST have a different color than the previous thread:
+    - Use get_color() to get the color for each thread; you will eventually have duplicated colors.
+    - Keep using the same color for each branch that a thread is exploring.
+    - When you hit an intersection spin off new threads for each option and give them their own colors.
+
+This code is not interested in tracking the path to the end position. Once you have completed this
+program however, describe how you could alter the program to display the found path to the exit
+position:
+
+What would be your strategy?
+
+I would use a tree structure where each node represents a position in the maze. The root node would be the starting position, and each new position would be added as a child node to its parent. When a thread explores a new position, it creates a new child node and links it to the current node. Once a thread reaches the exit, we can trace the path back to the root by following the parent-child links.
+
+I learnt about trees in my CSE 212 class, which I am taking at the same time as this class.
+
+Why would it work?
+
+The tree naturally records how each position was reached, and when the exit is found, the correct path can be extracted by following the parent nodes back to the start. Since each thread only moves forward, the tree structure efficiently maintains the path without interfering with the concurrent nature of the program.
+
+
+"""
+
+
 import math
 import threading
 from screen import Screen
@@ -47,11 +82,13 @@ def get_color():
     return color
 
 
-# Thread-safe locks
-color_lock = threading.Lock()  # Single lock for color operations
-count_lock = threading.Lock()  # Lock for thread count
-visited_lock = threading.Lock()  # Lock for visited positions
-visited = set()  # Track visited positions to avoid loops
+# TODO: Add any function(s) you need, if any, here.
+
+#locks
+color_lock = threading.Lock()  
+count_lock = threading.Lock() 
+visited_lock = threading.Lock() 
+visited = set()  
 
 
 def solve_find_end(maze):
@@ -78,14 +115,14 @@ def solve_find_end(maze):
 
         if not maze.can_move_here(x, y):  
             return False
-        if maze.at_end(x, y):  # If exit found, mark it and stop
+        if maze.at_end(x, y): 
             maze.move(x, y, color)
-            stop_event.set()  # Signal that we've found the exit
+            stop_event.set() 
             return True
 
         maze.move(x, y, color)
 
-        # Check all valid directions
+        
         directions = [(0, 1), (1, 0), (0, -1), (-1, 0)]
         valid = []
         for dx, dy in directions:
@@ -94,34 +131,36 @@ def solve_find_end(maze):
                 valid.append((dx, dy))
 
         if len(valid) == 0:
-            return False  # Dead end
+            return False 
 
         threads = []
         if len(valid) > 1:
             for dx, dy in valid[1:]:
                 with color_lock:
-                    new_color = get_color()  # Get a new color for each new thread
+                    new_color = get_color() 
                 with count_lock:
-                    thread_count += 1  # Increment thread count
+                    thread_count += 1 
                 thread = threading.Thread(target=explore, args=(x + dx, y + dy, new_color, maze))
                 thread.start()
                 threads.append(thread)
 
-            # Continue with the first direction (same color)
+        
             found = explore(x + valid[0][0], y + valid[0][1], color, maze)
 
-            # Wait for all threads to finish before returning
+        
             for thread in threads:
                 thread.join()
             return found
         else:
-            # Only one valid direction, explore in the same thread
             return explore(x + valid[0][0], y + valid[0][1], color, maze)
 
-    # Start the exploration with the initial color
+    with count_lock:
+        thread_count += 1
+
+
     with color_lock:
         color = get_color()
-    explore(*start, color, maze)  # Pass `maze` explicitly
+    explore(*start, color, maze)
 
 
 
