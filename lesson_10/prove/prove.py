@@ -107,23 +107,22 @@ def reader(shared_buffer, read_lock, full_sem, empty_sem, items_received_lock):
 
         empty_sem.release()
 
-        # Print the value without a comma if it's the last item
         with items_received_lock:
             shared_buffer[ITEMS_RECEIVED] += 1
             if shared_buffer[ITEMS_RECEIVED] >= shared_buffer[TOTAL_ITEMS]:
-                print(value, end='', flush=True)  # No comma for the last item
-                # Release full_sem for each reader to allow them to exit
+                print(value, end='', flush=True)  
+              
                 for _ in range(READERS):
                     full_sem.release()
                 break
+            
             else:
-                print(value, end=', ', flush=True)  # Print with a comma for non-last items
+                print(value, end=', ', flush=True) 
 
 def main():
     # total_items_to_send = 1003
     total_items_to_send = random.randint(1000, 10000)
     
-
     smm = SharedMemoryManager()
     smm.start()
 
