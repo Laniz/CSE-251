@@ -65,40 +65,95 @@ BUFFER_SIZE = 10
 READERS = 2
 WRITERS = 2
 
-def main():
+HEAD_INDEX = BUFFER_SIZE
+TAIL_INDEX = BUFFER_SIZE + 1
+NEXT_VALUE = BUFFER_SIZE + 2
+TOTAL_ITEMS = BUFFER_SIZE + 3
+ITEMS_RECEIVED = BUFFER_SIZE + 4
+WRITERS_FINISHED = BUFFER_SIZE + 5
 
-    # This is the number of values that the writer will send to the reader
-    items_to_send = random.randint(1000, 10000)
+def writer(shared_buffer, write_lock, empty_sem, full_sem):
+    while True:
+        empty_sem.acquire()
+        
+        with write_lock:
+            current_value = shared_buffer[NEXT_VALUE]
+            
+            if current_value > shared_buffer[TOTAL_ITEMS]:
+                shared_buffer[WRITERS_FINISHED] = 1
+                empty_sem.release()
+                break  
+
+            write_index = shared_buffer[TAIL_INDEX]
+            shared_buffer[write_index] = current_value
+            shared_buffer[TAIL_INDEX] = (write_index + 1) % BUFFER_SIZE
+            shared_buffer[NEXT_VALUE] = current_value + 1
+
+        full_sem.release()
+
+def reader(shared_buffer, read_lock, full_sem, empty_sem, items_received_lock):
+    while True:
+        full_sem.acquire()
+        
+        with items_received_lock:
+            if shared_buffer[ITEMS_RECEIVED] >= shared_buffer[TOTAL_ITEMS] and shared_buffer[WRITERS_FINISHED]:
+                full_sem.release()
+                break  
+
+        with read_lock:
+            read_index = shared_buffer[HEAD_INDEX]
+            value = shared_buffer[read_index]
+            shared_buffer[HEAD_INDEX] = (read_index + 1) % BUFFER_SIZE
+
+        empty_sem.release()
+
+        # Print the value without a comma if it's the last item
+        with items_received_lock:
+            shared_buffer[ITEMS_RECEIVED] += 1
+            if shared_buffer[ITEMS_RECEIVED] >= shared_buffer[TOTAL_ITEMS]:
+                print(value, end='', flush=True)  # No comma for the last item
+                # Release full_sem for each reader to allow them to exit
+                for _ in range(READERS):
+                    full_sem.release()
+                break
+            else:
+                print(value, end=', ', flush=True)  # Print with a comma for non-last items
+
+def main():
+    # total_items_to_send = 1003
+    total_items_to_send = random.randint(1000, 10000)
+    
 
     smm = SharedMemoryManager()
     smm.start()
 
-    # TODO - Create a ShareableList to be used between the processes
-    #      - The buffer should be size 10 PLUS at least three other
-    #        values (ie., [0] * (BUFFER_SIZE + 3)).  The extra values
-    #        are used for the head and tail for the circular buffer.
-    #        The another value is the current number that the writers
-    #        need to send over the buffer.  This last value is shared
-    #        between the writers.
-    #        You can add another value to the sharedable list to keep
-    #        track of the number of values received by the readers.
-    #        (ie., [0] * (BUFFER_SIZE + 4))
+    shared_buffer = smm.ShareableList([0] * (BUFFER_SIZE + 6))
+    shared_buffer[HEAD_INDEX] = 0
+    shared_buffer[TAIL_INDEX] = 0
+    shared_buffer[NEXT_VALUE] = 1
+    shared_buffer[TOTAL_ITEMS] = total_items_to_send
+    shared_buffer[ITEMS_RECEIVED] = 0
+    shared_buffer[WRITERS_FINISHED] = 0
 
-    # TODO - Create any lock(s) or semaphore(s) that you feel you need
+    write_lock = mp.Lock()
+    read_lock = mp.Lock()
+    items_received_lock = mp.Lock()
+    empty_sem = mp.Semaphore(BUFFER_SIZE)
+    full_sem = mp.Semaphore(0)
 
-    # TODO - create reader and writer processes
+    writers = [mp.Process(target=writer, args=(shared_buffer, write_lock, empty_sem, full_sem)) for _ in range(WRITERS)]
+    readers = [mp.Process(target=reader, args=(shared_buffer, read_lock, full_sem, empty_sem, items_received_lock)) for _ in range(READERS)]
 
-    # TODO - Start the processes and wait for them to finish
+    for process in writers + readers:
+        process.start()
 
-    print(f'{items_to_send} values sent')
+    for process in writers + readers:
+        process.join()
 
-    # TODO - Display the number of numbers/items received by the reader.
-    #        Can not use "items_to_send", must be a value collected
-    #        by the reader processes.
-    # print(f'{<your variable>} values received')
+    print(f"\n{total_items_to_send} values sent")
+    print(f"{shared_buffer[ITEMS_RECEIVED]} values received\n")
 
     smm.shutdown()
-
 
 if __name__ == '__main__':
     main()
