@@ -2,7 +2,7 @@
 Course: CSE 251
 Lesson Week: 10
 File: assignment.py
-Author: <your name>
+Author: Shepherd Ncube
 
 Purpose: assignment for week 10 - reader writer problem
 
