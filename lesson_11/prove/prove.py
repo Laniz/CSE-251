@@ -1,9 +1,3 @@
-"""
-Course: CSE 251
-Lesson Week: 11
-File: Assignment.py
-"""
-
 import time
 import random
 import multiprocessing as mp
@@ -37,7 +31,7 @@ def guest_partying(id, count):
     print(f'Guest: {id}, count = {count}')
     time.sleep(random.uniform(0, 1))
 
-def cleaner():
+def cleaner(id, room_lock, clean_count, stop_time):
     """
     do the following for TIME seconds
         cleaner will wait to try to clean the room (cleaner_waiting())
@@ -46,9 +40,15 @@ def cleaner():
         Take some time cleaning (cleaner_cleaning())
         display message STOPPING_CLEANING_MESSAGE
     """
-    pass
+    while time.time() < stop_time:
+        cleaner_waiting(id)
+        with room_lock:
+            print(STARTING_CLEANING_MESSAGE)
+            cleaner_cleaning(id)
+            print(STOPPING_CLEANING_MESSAGE)
+            clean_count.value += 1
 
-def guest():
+def guest(id, room_lock, guest_count, party_count, stop_time):
     """
     do the following for TIME seconds
         guest will wait to try to get access to the room (guest_waiting())
@@ -57,19 +57,50 @@ def guest():
         Take some time partying (call guest_partying())
         display message STOPPING_PARTY_MESSAGE if the guest is the last one leaving in the room
     """
-    pass
+    while time.time() < stop_time:
+        guest_waiting(id)
+        with room_lock:
+            if guest_count.value == 0:
+                print(STARTING_PARTY_MESSAGE)
+                party_count.value += 1
+            guest_count.value += 1
+        
+        guest_partying(id, guest_count.value)
+        
+        with room_lock:
+            guest_count.value -= 1
+            if guest_count.value == 0:
+                print(STOPPING_PARTY_MESSAGE)
 
 def main():
     # Start time of the running of the program. 
     start_time = time.time()
+    stop_time = start_time + TIME
 
-    # TODO - add any variables, data structures, processes you need
-    # TODO - add any arguments to cleaner() and guest() that you need
+    # Shared variables
+    room_lock = mp.Lock()
+    guest_count = mp.Value('i', 0)
+    clean_count = mp.Value('i', 0)
+    party_count = mp.Value('i', 0)
+
+    # Create cleaner and guest processes
+    processes = []
+    for i in range(CLEANING_STAFF):
+        p = mp.Process(target=cleaner, args=(i, room_lock, clean_count, stop_time))
+        processes.append(p)
+        p.start()
+
+    for i in range(HOTEL_GUESTS):
+        p = mp.Process(target=guest, args=(i, room_lock, guest_count, party_count, stop_time))
+        processes.append(p)
+        p.start()
+    
+    # Wait for all processes to finish
+    for p in processes:
+        p.join()
 
     # Results
-    print(f'Room was cleaned {cleaned_count} times, there were {party_count} parties')
-
+    print(f'Room was cleaned {clean_count.value} times, there were {party_count.value} parties')
 
 if __name__ == '__main__':
     main()
-
