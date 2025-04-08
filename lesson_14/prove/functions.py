@@ -45,68 +45,83 @@ You will lose 10% if you don't detail your part 1 and part 2 code below
 
 Describe how to speed up part 1
 
-<Add your comments here>
+threads were employed to retrieve the data for the husband, wife, and children concurrently. 
+This parallel approach reduces the overall waiting time compared to fetching each 
+individual's information sequentially.
+Additionally, when a parent family ID is identified for a person, a new thread is
+initiated to explore that family branch in parallel.
 
 
 Describe how to speed up part 2
 
-<Add your comments here>
-
+I used threading to fetch both family and person data concurrently,
+improving efficiency. A lock mechanism is implemented to ensure thread-safe
+modifications to the shared family tree structure and the `visited` dictionary,
+preventing potential race conditions. The `visited` dictionary helps avoid
+redundant processing of families
 
 Extra (Optional) 10% Bonus to speed up part 3
 
-<Add your comments here>
+This is similar to Part 2 but introduces a semaphore to limit the number
+of concurrently processed families. The `max_threads` parameter can be adjusted
+to control this concurrency. In this particular implementation, this limitation
+did not result in a faster overall execution time.
+
 
 """
 from common import *
 import queue
 from threading import Lock, Semaphore
+# from concurrent.futures import ThreadPoolExecutor, as_completed
 
 # -----------------------------------------------------------------------------
-from concurrent.futures import ThreadPoolExecutor, as_completed
-
 def depth_fs_pedigree(family_id, tree):
-    # KEEP this function even if you don't implement it
-    # TODO - implement Depth first retrieval
-    # TODO - Printing out people and families that are retrieved from the server will help debugging
     if tree.does_family_exist(family_id):
         return
+
     family_request = Request_thread(f"{TOP_API_URL}/family/{family_id}")
     family_request.start()
     family_request.join()
 
     family_data = family_request.get_response()
+    if not family_data:
+        print(f"Warning: Family {family_id} not found.")
+        return
+
     family = Family(family_data)
     tree.add_family(family)
 
     person_threads = []
-    recursive_threads = []
+    parent_family_ids = []
+
     for person_id in [family.get_husband(), family.get_wife()] + family.get_children():
         if person_id and not tree.does_person_exist(person_id):
             person_thread = Request_thread(f"{TOP_API_URL}/person/{person_id}")
-            person_threads.append(person_thread)
-            # person_thread.start()
-    for thread in person_threads:
-        thread.start()
-    for thread in person_threads:
+            person_thread.start()
+            person_threads.append((person_id, person_thread))
+
+    for pid, thread in person_threads:
         thread.join()
         person_data = thread.get_response()
         if person_data:
             person = Person(person_data)
             tree.add_person(person)
-
             parent_family_id = person.get_parentid()
             if parent_family_id and not tree.does_family_exist(parent_family_id):
-                recursive_thread = threading.Thread(
-                    target=depth_fs_pedigree, args=(parent_family_id, tree)
-                )
-                recursive_threads.append(recursive_thread)
-                recursive_thread.start()
+                parent_family_ids.append(parent_family_id)
+        else:
+            print(f"Warning: Person {pid} not found.")
+
+    recursive_threads = []
+    for parent_family_id in parent_family_ids:
+        recursive_thread = threading.Thread(
+            target=depth_fs_pedigree, args=(parent_family_id, tree)
+        )
+        recursive_threads.append(recursive_thread)
+        recursive_thread.start()
 
     for thread in recursive_threads:
         thread.join()
-
-
 
     # -----------------------------------------------------------------------------    
 def breadth_fs_pedigree(family_id, tree):
@@ -167,8 +182,6 @@ def breadth_fs_pedigree(family_id, tree):
             t.join()
 
         queue = next_queue
-
-
     # -----------------------------------------------------------------------------    
 def breadth_fs_pedigree_limit5(family_id, tree, max_threads=5):
     visited = {family_id: True}
@@ -230,3 +243,5 @@ def breadth_fs_pedigree_limit5(family_id, tree, max_threads=5):
             t.join()
 
         queue = next_queue
+
+    # -----------------------------------------------------------------------------
