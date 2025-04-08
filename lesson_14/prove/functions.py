@@ -45,11 +45,7 @@ You will lose 10% if you don't detail your part 1 and part 2 code below
 
 Describe how to speed up part 1
 
-threads were employed to retrieve the data for the husband, wife, and children concurrently. 
-This parallel approach reduces the overall waiting time compared to fetching each 
-individual's information sequentially.
-Additionally, when a parent family ID is identified for a person, a new thread is
-initiated to explore that family branch in parallel.
+I used threads to fetch all the people in a family (husband, wife, and kids) at the same time. Then I checked if any of them had a parent family and, if so, I launched a new thread to explore each of those parent families recursively. This way, the DFS spreads out in parallel and finishes much faster than doing it one-by-one.
 
 
 Describe how to speed up part 2
