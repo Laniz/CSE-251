@@ -106,7 +106,7 @@ def depth_fs_pedigree(family_id, tree):
             if parent_family_id and not tree.does_family_exist(parent_family_id):
                 parent_family_ids.append(parent_family_id)
         else:
-            print(f"Warning: Person {pid} not found.")
+            print(f"Person {pid} not found.")
 
     recursive_threads = []
     for parent_family_id in parent_family_ids:
