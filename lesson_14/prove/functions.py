@@ -1,7 +1,7 @@
 """
 Course: CSE 251, week 14
 File: functions.py
-Author: <your name>
+Author: shepherd Ncube
 
 Instructions:
 
@@ -52,8 +52,8 @@ Describe how to speed up part 2
 
 I used threading to fetch both family and person data concurrently,
 improving efficiency. A lock mechanism is implemented to ensure thread-safe
-modifications to the shared family tree structure and the `visited` dictionary,
-preventing potential race conditions. The `visited` dictionary helps avoid
+modifications to the shared family tree structure and the visited dictionary,
+preventing potential race conditions. The visited dictionary helps avoid
 redundant processing of families
 
 Extra (Optional) 10% Bonus to speed up part 3
