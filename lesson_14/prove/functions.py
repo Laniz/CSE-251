@@ -59,9 +59,9 @@ redundant processing of families
 Extra (Optional) 10% Bonus to speed up part 3
 
 This is similar to Part 2 but introduces a semaphore to limit the number
-of concurrently processed families. The `max_threads` parameter can be adjusted
+of concurrently processed families. The max_threads parameter can be adjusted
 to control this concurrency. In this particular implementation, this limitation
-did not result in a faster overall execution time.
+did not result in a faster overall execution time. 
 
 
 """
